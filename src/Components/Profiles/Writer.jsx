@@ -69,7 +69,7 @@ function Writer() {
         <div className="mt-12 flex flex-col justify-center">
           <p className="text-gray-600 text-center font-light lg:px-16">{description}</p>
           <h2
-            className="text-indigo-500 py-2 px-4 text-center font-medium mt-4"
+            className="text-red-800 py-2 px-4 text-center font-medium mt-4"
           >
             BLOGS </h2>
         </div>
@@ -79,15 +79,15 @@ function Writer() {
               to={`/${username}/${item.title}`}
             >
               <div>
-                <div className='mt-4 mx-10 md:mx-36 lg:mx-100'>
+                <div className='mt-4 mx-10 md:mx-36 lg:mx-105'>
                   <div className='md:flex mt-2 md:mt-4 '>
-                    <div className='mx-4 md:mx-0'>
+                    <div className='ml-4 md:mx-0'>
                       <img src='https://i.pinimg.com/236x/9b/2b/8f/9b2b8fa4714c82cab53215271b0896aa.jpg' className='w-full mt-6 h-48 md:hidden rounded-lg shadow-xl object-cover object-center' />
-                      <h2 className=' mt-2 text-center md:text-left md:font-extrabold	md:text-lg'>A COW KILLS A LION in THE MARA </h2>
-                      <p className='mt-1 text-xs md:text-base md:font-light	'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu sem integer vitae justo .</p>
+                      <h2 className=' mt-2 text-center md:text-left md:font-extrabold	md:text-lg'>{item.title}</h2>
+                      <p className='mt-1 text-xs md:text-base md:font-light	'>{item.description}...</p>
                     </div>
                     <div className='w-64'>
-                      <img src='https://i.pinimg.com/236x/9b/2b/8f/9b2b8fa4714c82cab53215271b0896aa.jpg' className=' h-24 w-full mt-2 hidden md:block rounded-lg shadow-xl object-cover object-center' />
+                      <img src={item.cover_url} className=' h-24 w-full mt-2 hidden md:block rounded-lg shadow-xl object-cover object-center' />
                     </div>
                   </div>
                 </div>

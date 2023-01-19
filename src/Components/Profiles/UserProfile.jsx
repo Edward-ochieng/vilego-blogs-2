@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
-function UserProfile({ user }) {
+function UserProfile({user}) {
   const [pfp, setPfp] = useState('https://i.pinimg.com/236x/57/7a/13/577a138292edc227be302f5a36a9f238.jpg')
   const [fName, setFName] = useState()
   const [sName, setSName] = useState()
@@ -10,6 +10,7 @@ function UserProfile({ user }) {
   const [emailAddress, setEmailAddress] = useState()
   const [username, setUsename] = useState()
   const token = localStorage.getItem("jwt");
+  const id = localStorage.getItem("user");
   const [showModal, setShowModal] = useState(false);
   const [profilePhoto, setProfilePhoto] = useState()
   const [firstName, setFirstName] = useState()
@@ -18,10 +19,20 @@ function UserProfile({ user }) {
   const [description, setDescription] = useState()
   const [articles, setArticles] = useState([])
   const navigate = useNavigate()
+  console.log(user)
+  const formData = new FormData();
+  console.log(token)
+
+
+
+
+  function onImageChange(e) {
+    setProfilePhoto([...e.target.files]);
+  }
 
 
   useEffect(() => {
-    fetch(`http://localhost:3000/users/${user.id}`, {
+    fetch(`http://localhost:3000/users/${parseInt(id)}`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -46,11 +57,7 @@ function UserProfile({ user }) {
         console.log(error)
       })
   }, []);
-  const formData = new FormData();
-  console.log(token)
-  function onImageChange(e) {
-    setProfilePhoto([...e.target.files]);
-  }
+
 
   function handleSubmit() {
     const token = localStorage.getItem("jwt");
@@ -68,11 +75,18 @@ function UserProfile({ user }) {
     }).then((res) => res.json()
       .then((res) => {
         console.log(res)
+        setFName(res.firstname)
+        setSName(res.secondname)
+        setDes(res.description)
+        setPfp(res.profile_photo)
+        setOcc(res.occupation)
+        setEmailAddress(res.email_address)
+        setUsename(res.username)
+        setArticles(res.articles)
         navigate(0)
       }))
     setShowModal(false)
   }
-  console.log(user.id)
 
   return (
     <div className="p-16">
@@ -89,7 +103,7 @@ function UserProfile({ user }) {
           <div claclassNamess="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">
             <button
               onClick={() => setShowModal(true)}
-              class="text-white py-2 px-4 uppercase rounded bg-blue-400 hover:bg-blue-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
+              class="text-white py-2 px-4 uppercase rounded bg-gray-400 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
             >
               EDIT
             </button>
@@ -108,7 +122,7 @@ function UserProfile({ user }) {
         <div class="mt-12 flex flex-col justify-center">
           <p class="text-gray-600 text-center font-light lg:px-16">{des}.</p>
           <h2
-            class="text-indigo-500 py-2 px-4 text-center font-medium mt-4"
+            class="text-red-800 py-2 px-4 text-center font-medium mt-4"
           >
             BLOGS </h2>
         </div>
@@ -118,15 +132,15 @@ function UserProfile({ user }) {
               to={`/${username}/${item.title}`}
             >
               <div>
-                <div className='mt-4 mx-10 md:mx-36 lg:mx-100'>
+                <div className='mt-4 mx-10 md:mx-36 lg:mx-105'>
                   <div className='md:flex mt-2 md:mt-4 '>
                     <div className='mx-4 md:mx-0'>
-                      <img src='https://i.pinimg.com/236x/9b/2b/8f/9b2b8fa4714c82cab53215271b0896aa.jpg' className='w-full mt-6 h-48 md:hidden rounded-lg shadow-xl object-cover object-center' />
-                      <h2 className=' mt-2 text-center md:text-left md:font-extrabold	md:text-lg'>A COW KILLS A LION in THE MARA </h2>
-                      <p className='mt-1 text-xs md:text-base md:font-light	'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu sem integer vitae justo .</p>
+                      <img src={item.cover_url}  className='w-full mt-6 h-48 md:hidden rounded-lg shadow-xl object-cover object-center' />
+                    <h2 className=' mt-2 text-center md:text-left md:font-extrabold	md:text-lg'>{item.title} </h2>
+                      <p className='mt-1 text-xs md:text-base md:font-light	'>{item.description}.</p>
                     </div>
                     <div className='w-64'>
-                      <img src='https://i.pinimg.com/236x/9b/2b/8f/9b2b8fa4714c82cab53215271b0896aa.jpg' className=' h-24 w-full mt-2 hidden md:block rounded-lg shadow-xl object-cover object-center' />
+                      <img src={item.cover_url} className=' h-24 w-full mt-2 hidden md:block rounded-lg shadow-xl object-cover object-center' />
                     </div>
                   </div>
                 </div>

@@ -13,7 +13,7 @@ import Writer from './Components/Profiles/Writer';
 import UserProfile from './Components/Profiles/UserProfile';
 
 function App() {
-  
+
 
   const [user, setUser] = useState()
   const token = localStorage.getItem("jwt");
@@ -23,7 +23,7 @@ function App() {
   console.log(token)
 
   useEffect(() => {
-    fetch(`http://localhost:3000/users/${parseInt(id)}`,{
+    fetch(`http://localhost:3000/users/${parseInt(id)}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -36,43 +36,36 @@ function App() {
             console.log(data)
             setUser(data)
           })
-        }else{
+        } else {
           res.json().then((res) => console.log(res))
         }
       })
       .catch(error => {
         console.log(error)
       });
-  },[])
+  }, [])
 
 
-  if (user) {
-    return(
-      <div className="">
-      <BrowserRouter>
-      <Navbar />
-      <Routes>
-            <Route path='/' element={<Blog/>} />
-            <Route path='create' element={<TextEditor />} />
-            <Route path=':writer' > 
-            <Route index element={<Writer/>} /> 
-            <Route path=':id' element={<DisplayArticle />} />
-            </Route>
-        <Route path='about' element={<About/>} />
-        <Route path='profile' element={<UserProfile user={user}/>} />
-       </Routes>
-      </BrowserRouter>
-      </div>
-    )
-  } else {
   return (
-        <BrowserRouter>
+    <div className="">
+      <BrowserRouter>
+        <Navbar user={user} />
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='login' element={<Login  setUser={setUser}/>} />
+          <Route path='/' element={<Home user={user} />} />
+          <Route path='login' element={<Login setUser={setUser} />} />
+          <Route path='create' element={<TextEditor user={user} />} />
+          <Route path='create/login' element={<Login setUser={setUser} />} />
+          <Route path='profile' element={<UserProfile user={user} />} />
+          <Route path='blogs' element={<Blog user={user} />} />
+          <Route path=':writer' >
+            <Route index element={<Writer />} />
+            <Route path=':id' element={<DisplayArticle user={user} />} />
+          </Route>
+          <Route path='about' element={<About />} />
         </Routes>
-        </BrowserRouter>
-  );}
+      </BrowserRouter>
+    </div>
+  )
 }
 
 export default App;
