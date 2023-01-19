@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       margin: {
         '100': '36rem',
+        '105': '30rem',
       },
       width: {
         '128': '48rem',

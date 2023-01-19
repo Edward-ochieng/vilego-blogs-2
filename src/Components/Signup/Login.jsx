@@ -56,7 +56,7 @@ function Login({setUser}) {
         res.json().then((user) => {
           console.log(user)
           setUser(user.user)
-          navigate("0")
+          navigate(0)
           
         })
       } else {
@@ -94,7 +94,7 @@ function Login({setUser}) {
           setUser(user.user)
           localStorage.setItem("jwt", user.jwt);
           localStorage.setItem("user", `${user.user.id}`);
-          navigate("/")
+          navigate("/blogs")
         })
       } else {
         res.json().then((err) => {
@@ -130,7 +130,7 @@ function Login({setUser}) {
   }
 
   return (
-    <div className="flex justify-center place-items-center">
+    <div className="flex justify-center mt-36">
     <div className="main-login-page-container">
       {/* SIGN UP FORM */}
       <div className={`signup-container ${active}`}>

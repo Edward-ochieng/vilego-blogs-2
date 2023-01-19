@@ -8,7 +8,10 @@ function DisplayArticle() {
   const [contentState, setContentState] = useState(EditorState.createEmpty());
   const [title, setTitle] = useState('')
   const id = useParams();
-  console.log(id)
+  const [firstName, setFirstName] = useState()
+  const [secondName, setSecondName] = useState()
+  const [pfp, setPfp] = useState()
+  const [occupation, setOccupation] = useState()
 
   console.log(id)
   useEffect(() => {
@@ -20,9 +23,12 @@ function DisplayArticle() {
         return res.json();
       })
       .then(data => {
+        setFirstName(data.user.firstname)
+        setSecondName(data.user.secondname)
+        setPfp(data.user.profile_photo)
+        setOccupation(data.user.occupation)
         const trial = (JSON.parse(data.content))
-        // console.log(trial.blocks[0].text)
-        console.log(trial)
+        console.log(data)
         setTitle(data.title)
         const fetchedContentState = convertFromRaw((JSON.parse(data.content)));
         setContentState(EditorState.createWithContent(fetchedContentState));
@@ -38,11 +44,11 @@ function DisplayArticle() {
         <div className='mx-8 md:mx-36 lg:mx-100'>
         <div className='flex md:mx-0 space-x-4 '>
                  <div className='rounded'>
-                 <img src='https://i.pinimg.com/236x/4f/95/0d/4f950dbdcdf5d96d1712987a5625a9b0.jpg' className='h-10 w-10 rounded-full border mt-4'></img>
+                 <img src={pfp} className='h-10 w-10 rounded-full border mt-4'></img>
                  </div>
                  <div className='mt-4'>
-                 <p className=''>JANE DOE</p>
-                 <p className='text-xs md:text-sm md:font-light	'>A Software Engineer graduate from Moringa School, works at his place. </p>
+                 <p className=''>{firstName} {secondName}</p>
+                 <p className='text-xs md:text-sm md:font-light	'>{occupation} </p>
                  </div>
                  </div>
         </div>

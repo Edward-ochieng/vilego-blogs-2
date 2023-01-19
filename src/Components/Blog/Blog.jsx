@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import BlogCard from './BlogCard';
 
 
-function Blog() {
+function Blog({user}) {
     const [showOption, setShowOption] = useState(true)
     const [articles, setArticles] = useState([])
     const token = localStorage.getItem("jwt");
     const id = localStorage.getItem("user");
-
+    console.log(user)
     useEffect(() => {
       fetch(`http://localhost:3000/articles`,{
         method: "GET",
