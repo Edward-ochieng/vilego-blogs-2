@@ -215,7 +215,6 @@ function Navbar({user}) {
             </nav>
         );
     }
- 
 }
 
 export default Navbar
