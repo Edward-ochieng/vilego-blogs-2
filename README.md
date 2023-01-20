@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Vilego Blogs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Table of Contents
 
-## Available Scripts
+1. [Description](#description)
+2. [Screenshots](#screenshots)
+3. [Setup and Installation](#setup-and-installation)
+   - [Setting up the Backend](#setting-up-the-backend)
+   - [Setting up the Frontend](#setting-up-the-frontend)
+4. [Technologies Used](#technologies-used)
+5. [Collaborators](#collaborators)
+6. [License](#license)
 
-In the project directory, you can run:
+# Description
+Vilego Blogs is a customizable blogging app that helps a user create blop posts and articles that other users can interact with in a safe community.
+# Screenshots
+![Screenshot 1]()
 
-### `npm start`
+![Screenshot 2]()
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Screenshot 3]()
+# Setup and Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setting up the Backend
 
-### `npm test`
+- Install [Rails Backend API](https://github.com/Edward-ochieng/Blog-app-backend)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setting up the Frontend
 
-### `npm run build`
+### Install [NodeJS]()
+- Verify the Node version currently running using the command:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+$ node -v
+```
+- If your Node version is not 16.x.x, install it and set it as the current and default version with commands:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+$ nvm install 16
+$ nvm use 16
+$ nvm alias default 16
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- You can also update your npm version with:
 
-### `npm run eject`
+```
+npm i -g npm@latest
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Install Dependencies
+- Clone this repository and change directory into the folder using the following commands:
+```
+$ git clone git@github.com:Edward-ochieng/vilego-blogs-2.git
+$ cd vilego-blogs-2
+```
+- Run the following command to install the desired Node dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+$ npm install
+```
+- Run the app using command:
+```
+$ npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Technologies Used
+- HTML
+- CSS
+- JavaScript
+- ReactJS
+- TailWind
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Collaborators
+- [Allan Ngugi]()
+- [Edward Ochieng](https://github.com/Edward-ochieng)
+- [Joseph Mwinzi](https://github.com/Mwinzi)
+- [Joseph Njenga](https://github.com/JosephNjeruNjenga)
+- [Nicholas Ndikwe](https://github.com/k-l-a-u-s)
+- [Rebecca Njeri](https://github.com/rebecca-2022)
+- [Timothy Lenku](https://github.com/esipil)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# License
+This project is under [MIT]() license.
