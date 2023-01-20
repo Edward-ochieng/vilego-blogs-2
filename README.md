@@ -80,4 +80,4 @@ $ npm start
 - [Timothy Lenku](https://github.com/esipil)
 
 # License
-This project is under [MIT]() license.
+This project is under [MIT](https://github.com/Edward-ochieng/vilego-blogs-2/blob/main/LICENSE.txt) license.
