@@ -14,11 +14,11 @@
 # Description
 Vilego Blogs is a customizable blogging app that helps a user create blop posts and articles that other users can interact with in a safe community.
 # Screenshots
-![Screenshot 1]()
+![Screenshot 1](https://github.com/Edward-ochieng/vilego-blogs-2/blob/main/src/images/screenshot-1.png)
 
-![Screenshot 2]()
+![Screenshot 2](https://github.com/Edward-ochieng/vilego-blogs-2/blob/main/src/images/screenshot-2.png)
 
-![Screenshot 3]()
+![Screenshot 3](https://github.com/Edward-ochieng/vilego-blogs-2/blob/main/src/images/screenshot-3.png)
 # Setup and Installation
 
 ## Setting up the Backend
