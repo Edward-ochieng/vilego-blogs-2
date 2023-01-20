@@ -7,7 +7,22 @@ import { useNavigate } from 'react-router-dom';
 
 
 function TextEditor({status}) {
+  useEffect(() =>{
+      fetch("https://blog-app-production-e04b.up.railway.app/tags",{
+        method: 'GET',
+        headers: { 
+          Authorization: `Bearer ${token}`,
+      }
 
+      }
+      ) 
+      .then((res) => res.json())
+      .then((data) => 
+    {  console.log(data)
+  }
+      )
+  },[]
+  )
     const [editorState, setEditorState] = useState(
         () => EditorState.createEmpty(),
       );
@@ -53,7 +68,7 @@ function TextEditor({status}) {
         formData.append('content', datas);
         formData.append('description', description);
 
-        fetch('http://localhost:3000/articles', {
+        fetch('https://blog-app-production-e04b.up.railway.app/articles', {
             method: 'POST', 
             headers: {
               Authorization: `Bearer ${token}`,

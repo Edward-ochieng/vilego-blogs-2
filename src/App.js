@@ -23,7 +23,7 @@ function App() {
   console.log(token)
 
   useEffect(() => {
-    fetch(`http://localhost:3000/users/${parseInt(id)}`, {
+    fetch(`https://blog-app-production-e04b.up.railway.app/users/${parseInt(id)}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
