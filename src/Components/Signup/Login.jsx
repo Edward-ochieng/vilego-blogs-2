@@ -107,6 +107,7 @@ function Login({setUser}) {
     });
   }
 
+  
   function errorMessages(errors) {
     if (errors.errors.username && errors.errors.username.includes('has already been taken')) {
       return "Username already exists";
