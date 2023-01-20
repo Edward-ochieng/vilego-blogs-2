@@ -1,0 +1,22 @@
+.conflict{
+    z-index: 1;
+    position: relative;
+    width: 1800px;
+    height: 400px;
+    margin: 40px;
+    border-radius: 10px;
+    text-align: center;
+    display: grid;
+    column-gap: 180px;
+    grid-template-columns: auto auto auto;
+    float: left;
+    margin-left: 4%;
+    margin-top: 8%;
+}
+.each-slide-effect > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 4500px;
+}

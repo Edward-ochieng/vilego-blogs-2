@@ -114,12 +114,12 @@ function Navbar({user}) {
         );
     } else {
         return (
-            <nav className="w-full bg-red-800 shadow">
+            <nav className="w-full bg-[#d9003d] shadow">
                 <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                     <div>
                         <div className="flex items-center justify-between py-3 md:py-5 md:block">
                             <a href="javascript:void(0)">
-                                <h2 className="text-2xl font-bold text-white">LOGO</h2>
+                                <img src="http://res.cloudinary.com/dlt8epvwi/image/upload/v1674121886/ilccgavajk4lwlxcepkv.png" className="w-14 h-14 "></img>
                             </a>
                             <div className="md:hidden">
                                 <button
@@ -165,13 +165,13 @@ function Navbar({user}) {
                                 }`}
                         >
                             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                                <li className="text-white hover:text-indigo-200">
+                                <li className="text-white hover:text-black cursor-pointer hover-underline font-bold text-xl font-family:Roboto">
                                     <a href="/">Home</a>
                                 </li>
-                                <li className="text-white hover:text-indigo-200">
+                                <li className="text-white hover:text-black cursor-pointer hover-underline font-bold text-xl font-family:Roboto">
                                     <a href="/create/login">Create</a>
                                 </li>
-                                <li className="text-white hover:text-indigo-200">
+                                <li className="text-white hover:text-black cursor-pointer hover-underline font-bold text-xl font-family:Roboto">
                                     <a href="/about">About US</a>
                                 </li>
                             </ul>
@@ -187,7 +187,7 @@ function Navbar({user}) {
                                     onClick={() => {
                                         navigate('/login')
                                     }}
-                                    className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+                                    className="inline-block w-full px-8 py-5 text-center text-[#181919] bg-white rounded-md shadow hover:bg-gray-100"
                                 >
                                     Log In
                                 </button>
@@ -215,7 +215,5 @@ function Navbar({user}) {
             </nav>
         );
     }
- 
 }
-
 export default Navbar

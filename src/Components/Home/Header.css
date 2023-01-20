@@ -1,0 +1,57 @@
+.bady {
+    background-image: url("https://images.pexels.com/photos/3784424/pexels-photo-3784424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-position: 100 800px;
+    background-repeat: no-repeat;
+    background-size: 100vw 700px;
+    background-position: 20% 50%;
+    height: 70vh;
+}
+.p{
+    position: relative;
+    width: 347px;
+    left: 236px;
+    top: 100px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 49px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #eff5fa;
+    background-color: rgba(50.2, 50.2, 50.2, 0.6);
+}
+.button{
+    box-sizing: border-box;
+    position: absolute;
+    width: 156px;
+    height: 70px;
+    left: 296px;
+    top: 445px;
+    background: #D9003D;
+    border: 3px solid #000000;
+    text-shadow: #FFFFFF;
+    border-radius: 40%;
+}
+.hme{
+    position: absolute;
+    width: 456px;
+    left: 1100px;
+    top: 188px;
+}
+.h2{
+    position: relative;
+    width: 237px;
+    height: 38px;
+    left: 374px;
+    top: 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #D9003D;
+    padding-left: 50px;
+}
