@@ -25,11 +25,7 @@ function Login({setUser}) {
     passwordConfirmation: "",
   });
 
-<<<<<<< HEAD
   const apiURL = "https://blog-app-production-e04b.up.railway.app";
-=======
-  const apiURL = "https://blog-app-production-e04b.up.railway.app/";
->>>>>>> b16508bcc88fe90b5ca9c92b1ac77dc793d18201
   const active = !signIn && "active";
   const login_password = LoginPassword && "error-handle";
   const login_username = loginUserName && "error-handle";
