@@ -17,7 +17,7 @@ function Writer() {
 
 
   useEffect(() => {
-    fetch(`http://localhost:3000/writer/${id.writer}`, {
+    fetch(`https://blog-app-production-e04b.up.railway.app/writer/${id.writer}`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,

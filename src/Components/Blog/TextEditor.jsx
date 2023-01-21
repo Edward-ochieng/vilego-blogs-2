@@ -53,7 +53,7 @@ function TextEditor({status}) {
         formData.append('content', datas);
         formData.append('description', description);
 
-        fetch('http://localhost:3000/articles', {
+        fetch('https://blog-app-production-e04b.up.railway.app/articles', {
             method: 'POST', 
             headers: {
               Authorization: `Bearer ${token}`,

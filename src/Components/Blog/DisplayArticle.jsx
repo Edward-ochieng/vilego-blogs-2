@@ -15,7 +15,7 @@ function DisplayArticle() {
 
   console.log(id)
   useEffect(() => {
-    fetch(`http://localhost:3000/articles/${id.id}`)
+    fetch(`https://blog-app-production-e04b.up.railway.app/articles/${id.id}`)
       .then(res => {
         if (!res.ok) {
           throw Error(res.statusText);
