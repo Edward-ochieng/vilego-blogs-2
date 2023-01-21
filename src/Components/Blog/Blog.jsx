@@ -10,7 +10,7 @@ function Blog({user}) {
     const id = localStorage.getItem("user");
     console.log(user)
     useEffect(() => {
-      fetch(`http://localhost:3000/articles`,{
+      fetch(`https://blog-app-production-e04b.up.railway.app/articles`,{
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -57,7 +57,7 @@ function Blog({user}) {
                  </div>
                  <div className='mt-4'>
                  <p className=''>{item.user.firstname} {item.user.secondname}</p>
-                 <p className='text-xs'>Sept,22 2013</p>
+                 <p className='text-xs'>{item.user.occupation}</p>
                  </div>
                  </div>
                 </Link>
