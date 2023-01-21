@@ -47,7 +47,7 @@ function App() {
 
 
   return (
-    <div className="">
+    <div>
       <BrowserRouter>
         <Navbar user={user} />
         <Routes>

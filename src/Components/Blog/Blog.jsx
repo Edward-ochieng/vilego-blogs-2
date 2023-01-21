@@ -57,7 +57,7 @@ function Blog({user}) {
                  </div>
                  <div className='mt-4'>
                  <p className=''>{item.user.firstname} {item.user.secondname}</p>
-                 <p className='text-xs'>Sept,22 2013</p>
+                 <p className='text-xs'>{item.user.occupation}</p>
                  </div>
                  </div>
                 </Link>

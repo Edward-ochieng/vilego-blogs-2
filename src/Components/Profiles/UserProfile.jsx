@@ -32,7 +32,7 @@ function UserProfile({user}) {
 
 
   useEffect(() => {
-    fetch(`http://localhost:3000/users/${parseInt(id)}`, {
+    fetch(`https://blog-app-production-e04b.up.railway.app//users/${parseInt(id)}`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -66,7 +66,7 @@ function UserProfile({user}) {
     formData.append('occupation', occupation);
     formData.append('description', description);
     formData.append('profile_photo', profilePhoto[0]);
-    fetch(`http://localhost:3000/users/${user.id}`, {
+    fetch(`https://blog-app-production-e04b.up.railway.app/users/${user.id}`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${token}`,

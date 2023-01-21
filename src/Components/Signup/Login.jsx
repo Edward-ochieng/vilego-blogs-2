@@ -25,7 +25,11 @@ function Login({setUser}) {
     passwordConfirmation: "",
   });
 
+<<<<<<< HEAD
   const apiURL = "https://blog-app-production-e04b.up.railway.app";
+=======
+  const apiURL = "https://blog-app-production-e04b.up.railway.app/";
+>>>>>>> b16508bcc88fe90b5ca9c92b1ac77dc793d18201
   const active = !signIn && "active";
   const login_password = LoginPassword && "error-handle";
   const login_username = loginUserName && "error-handle";
@@ -98,6 +102,7 @@ function Login({setUser}) {
         })
       } else {
         res.json().then((err) => {
+          setErrors(err)
           console.log(err);
           err.errors ? setLoginUserName(true) : setLoginUserName(false);
           err.errors ? setLoginPassword(true) : setLoginPassword(false);
@@ -106,22 +111,23 @@ function Login({setUser}) {
     });
   }
 
+  
   function errorMessages(errors) {
-    if (errors.username && errors.username.includes("has already been taken")) {
+    if (errors.errors.username && errors.errors.username.includes('has already been taken')) {
       return "Username already exists";
-    } else if (
+    }      else if (
       errors.errors &&
-      errors.errors.includes("Invalid username or passsword")
+      errors.errors === "Invalid username or passsword"
     ) {
       return "Invalid username or passsword";
-    } else if (
-      errors.email_address &&
-      errors.email_address.includes("has already been taken")
+    }  else if (
+      errors.errors.email_address &&
+      errors.errors.email_address.includes("has already been taken")
     ) {
       return "Email already exists";
     } else if (
-      errors.password_confirmation &&
-      errors.password_confirmation.includes("doesn't match Password")
+      errors.errors.password_confirmation &&
+      errors.errors.password_confirmation.includes("doesn't match Password")
     ) {
       return "Password doesn't match";
     } else {
@@ -184,7 +190,6 @@ function Login({setUser}) {
             type="password"
             placeholder="Password Confirmation"
           />
-          <input type="file" name="photo" accept="image/png, image/jpeg" />
           {Object.keys(errors).length > 0 ? (
             <p className="signup-error-message-handle">
               {errorMessages(errors)}

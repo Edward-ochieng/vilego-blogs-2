@@ -1,9 +1,18 @@
 import React from 'react'
+import Header from './Header'
+import Card from './Card'
+import "./Card.css";
 
-function Home() {
+
+export default function Home() {
   return (
-    <div>Home</div>
+    <div >
+    <div className='Carda'>
+      <Header />
+      <div className='main'>
+        <Card />
+      </div>
+    </div>
+    </div>
   )
 }
-
-export default Home
