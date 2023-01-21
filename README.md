@@ -1,6 +1,6 @@
 # Vilego Blogs
 
-#Here is the project live link: https://vilegoblogs.netlify.app/
+[Live link](https://vilegoblogs.netlify.app/ "Vilego Blogs")
 
 # Table of Contents
 
